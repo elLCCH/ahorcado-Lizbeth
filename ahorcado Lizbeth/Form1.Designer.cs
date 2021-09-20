@@ -37,6 +37,8 @@ namespace ahorcado_Lizbeth
             this.label1 = new System.Windows.Forms.Label();
             this.pPalo2 = new System.Windows.Forms.PictureBox();
             this.pPalo1 = new System.Windows.Forms.PictureBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.txtLetras = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pCabeza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBrazos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pEstomago)).BeginInit();
@@ -48,38 +50,42 @@ namespace ahorcado_Lizbeth
             // pCabeza
             // 
             this.pCabeza.Image = ((System.Drawing.Image)(resources.GetObject("pCabeza.Image")));
-            this.pCabeza.Location = new System.Drawing.Point(226, 124);
+            this.pCabeza.Location = new System.Drawing.Point(224, 124);
             this.pCabeza.Name = "pCabeza";
-            this.pCabeza.Size = new System.Drawing.Size(90, 79);
+            this.pCabeza.Size = new System.Drawing.Size(90, 78);
             this.pCabeza.TabIndex = 0;
             this.pCabeza.TabStop = false;
+            this.pCabeza.Visible = false;
             // 
             // pBrazos
             // 
             this.pBrazos.Image = ((System.Drawing.Image)(resources.GetObject("pBrazos.Image")));
-            this.pBrazos.Location = new System.Drawing.Point(223, 199);
+            this.pBrazos.Location = new System.Drawing.Point(221, 198);
             this.pBrazos.Name = "pBrazos";
-            this.pBrazos.Size = new System.Drawing.Size(90, 79);
+            this.pBrazos.Size = new System.Drawing.Size(111, 19);
             this.pBrazos.TabIndex = 1;
             this.pBrazos.TabStop = false;
+            this.pBrazos.Visible = false;
             // 
             // pEstomago
             // 
             this.pEstomago.Image = ((System.Drawing.Image)(resources.GetObject("pEstomago.Image")));
-            this.pEstomago.Location = new System.Drawing.Point(257, 225);
+            this.pEstomago.Location = new System.Drawing.Point(254, 217);
             this.pEstomago.Name = "pEstomago";
-            this.pEstomago.Size = new System.Drawing.Size(42, 79);
+            this.pEstomago.Size = new System.Drawing.Size(42, 31);
             this.pEstomago.TabIndex = 2;
             this.pEstomago.TabStop = false;
+            this.pEstomago.Visible = false;
             // 
             // pPiernas
             // 
             this.pPiernas.Image = ((System.Drawing.Image)(resources.GetObject("pPiernas.Image")));
-            this.pPiernas.Location = new System.Drawing.Point(251, 251);
+            this.pPiernas.Location = new System.Drawing.Point(248, 241);
             this.pPiernas.Name = "pPiernas";
-            this.pPiernas.Size = new System.Drawing.Size(90, 79);
+            this.pPiernas.Size = new System.Drawing.Size(48, 67);
             this.pPiernas.TabIndex = 3;
             this.pPiernas.TabStop = false;
+            this.pPiernas.Visible = false;
             // 
             // label1
             // 
@@ -99,25 +105,48 @@ namespace ahorcado_Lizbeth
             this.pPalo2.Size = new System.Drawing.Size(216, 79);
             this.pPalo2.TabIndex = 6;
             this.pPalo2.TabStop = false;
+            this.pPalo2.Visible = false;
             // 
             // pPalo1
             // 
+            this.pPalo1.BackColor = System.Drawing.Color.Transparent;
             this.pPalo1.Image = ((System.Drawing.Image)(resources.GetObject("pPalo1.Image")));
-            this.pPalo1.Location = new System.Drawing.Point(63, 52);
+            this.pPalo1.Location = new System.Drawing.Point(64, 52);
             this.pPalo1.Name = "pPalo1";
             this.pPalo1.Size = new System.Drawing.Size(90, 315);
             this.pPalo1.TabIndex = 7;
             this.pPalo1.TabStop = false;
+            this.pPalo1.Visible = false;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Location = new System.Drawing.Point(442, 12);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(157, 23);
+            this.btnConsulta.TabIndex = 9;
+            this.btnConsulta.Text = "Ir Siguiente Pregunta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // txtLetras
+            // 
+            this.txtLetras.Location = new System.Drawing.Point(224, 419);
+            this.txtLetras.Name = "txtLetras";
+            this.txtLetras.Size = new System.Drawing.Size(100, 23);
+            this.txtLetras.TabIndex = 10;
+            this.txtLetras.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtLetras_KeyUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 497);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(600, 485);
+            this.Controls.Add(this.txtLetras);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.pPiernas);
             this.Controls.Add(this.pEstomago);
             this.Controls.Add(this.pBrazos);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pCabeza);
             this.Controls.Add(this.pPalo2);
             this.Controls.Add(this.pPalo1);
@@ -146,6 +175,8 @@ namespace ahorcado_Lizbeth
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pPalo2;
         private System.Windows.Forms.PictureBox pPalo1;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.TextBox txtLetras;
     }
 }
 

@@ -12,7 +12,9 @@ namespace ahorcado_Lizbeth
 {
     public partial class Form1 : Form
     {
+        int ContadorErrores = 0;
         string Guardacion;
+        //string PalabraClave = "ORURO", Palabra = "";
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +40,14 @@ namespace ahorcado_Lizbeth
             
 
         }
+        private void txtLetras_KeyUp(object sender, KeyEventArgs e)
+        {
+            string letra = Convert.ToString(e.KeyData);
 
+            MessageBox.Show("presionaste: " + letra);
+
+            CompararLetra(letra);
+        }
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             string letra = Convert.ToString(e.KeyData);
@@ -46,19 +55,18 @@ namespace ahorcado_Lizbeth
             MessageBox.Show("presionaste: "+letra);
 
             CompararLetra(letra);
-            //if (e.KeyValue == 13)
-            //{
-            //    MessageBox.Show("presionaste enter");
-            //}
+            
         }
 
         private void CompararLetra(string pLetra)
         {
-            string PalabraClave = "GABRIELA", Palabra="";
+            string PalabraClave = "GABRIELA";
+            string Palabra = "";
             bool x = PalabraClave.Contains(pLetra);
             string[] resultado = new string[PalabraClave.Length];
             string barritas = "";
             string nuevaPalabra="";
+            
             for (int i = 0; i < PalabraClave.Length; i++)
             {
                 barritas = barritas + "_";
@@ -137,6 +145,31 @@ namespace ahorcado_Lizbeth
                 //CompararLetra(Palabra);
                 MessageBox.Show("No encontrado");
                 label1.Text = Guardacion;
+                ContadorErrores = ContadorErrores + 1;
+                MessageBox.Show(Convert.ToString(ContadorErrores));
+                switch (ContadorErrores)
+                {
+                    case 1:
+                        pPalo1.Visible=true;
+                        break;
+                    case 2:
+                        pPalo2.Visible = true;
+                        break;
+                    case 3:
+                        pCabeza.Visible = true;
+                        break;
+                    case 4:
+                        pBrazos.Visible = true;
+                        break;
+                    case 5:
+                        pEstomago.Visible = true;
+                        break;
+                    case 6:
+                        pPiernas.Visible = true;
+                        break;
+                    default:
+                        break;
+                }
             }
             
             //for (int i = 0; i < resultado.Length; i++)
@@ -152,6 +185,23 @@ namespace ahorcado_Lizbeth
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+        private void reiniciar()
+        {
+            pPalo1.Visible = false;
+            pPalo2.Visible = false;
+            pCabeza.Visible = false;
+            pBrazos.Visible = false;
+            pEstomago.Visible = false;
+            pPiernas.Visible = false;
         }
     }
 }
