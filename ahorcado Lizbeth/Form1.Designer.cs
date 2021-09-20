@@ -37,7 +37,7 @@ namespace ahorcado_Lizbeth
             // pCabeza
             // 
             this.pCabeza.Image = ((System.Drawing.Image)(resources.GetObject("pCabeza.Image")));
-            this.pCabeza.Location = new System.Drawing.Point(127, 41);
+            this.pCabeza.Location = new System.Drawing.Point(140, 37);
             this.pCabeza.Name = "pCabeza";
             this.pCabeza.Size = new System.Drawing.Size(90, 79);
             this.pCabeza.TabIndex = 0;
